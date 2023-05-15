@@ -8,8 +8,7 @@ export default function Profile() {
             <div className="img-box">
                 <img src={ProfilePic} alt="Profile pic" />
             </div>
-            <h2>BILAL HUSSAIN</h2>
-            <h3>WEB DEVELOPER</h3>
+            <h2 contentEditable="true">Bilal Hussain<br/><span>Web Developer</span></h2>
         </div>
     )
 }
