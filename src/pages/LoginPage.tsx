@@ -1,25 +1,28 @@
 import React, { useState } from 'react'
-import axios from 'axios';
+import AuthService from "../services/AuthService";
+import StorageService from '../services/StorageService';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
 
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("password");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
-    const handleSignUp = () => {
-        console.log("check")
-        const url = "https://4987-119-160-96-219.ngrok-free.app/auth"
-        const data = { email, password };
-
-        axios
-            .post(url, data)
-            .then((response => {
-                console.log(response.data);
-            }))
-            .catch((error) => {
-                console.log(error);
+    const handleSignUp = (e: any) => {
+        e.preventDefault();
+        let user_data = { email: email, password: password };
+        AuthService.register(user_data)
+            .then((res: any) => {
+                // console.log("res=>", res)
+                if (res.status) {
+                    StorageService.setSession(res.data); // stores data in local storage
+                    setTimeout(() => {
+                        navigate('/cv');
+                    }, 1500);
+                }
             })
-
+            .catch((error: any) => { console.log(error) });
     }
 
     return (
@@ -27,41 +30,46 @@ const LoginPage = () => {
             <div className="login-body">
                 <input type="checkbox" id="chk" aria-hidden="true" />
                 <div className="signup">
-                    <label htmlFor="chk" aria-hidden="true">Sign up</label>
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        autoComplete="on"
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        autoComplete="on"
-                        onChange={e => setPassword(e.target.value)}
-                    />
-                    <button onClick={handleSignUp}>Sign up</button>
+                    <form onSubmit={(e) => handleSignUp(e)}>
+                        <label htmlFor="chk" aria-hidden="true">Sign up</label>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            autoComplete="on"
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            autoComplete="on"
+                            onChange={e => setPassword(e.target.value)}
+                        />
+                        <button type="submit">Sign up</button>
+                    </form>
                 </div>
 
                 <div className="login">
-                    <label htmlFor="chk" aria-hidden="true">Login</label>
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        autoComplete="on"
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                    <input
-                        type="password"
-                        name="pswd"
-                        placeholder="Password"
-                        autoComplete="on"
-                        onChange={e => setPassword(e.target.value)}
-                    />
-                    <button >Login</button>
+                    <form>
+
+                        <label htmlFor="chk" aria-hidden="true">Login</label>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            autoComplete="on"
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                        <input
+                            type="password"
+                            name="pswd"
+                            placeholder="Password"
+                            autoComplete="on"
+                            onChange={e => setPassword(e.target.value)}
+                        />
+                        <button >Login</button>
+                    </form>
                 </div>
             </div>
         </>

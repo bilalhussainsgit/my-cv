@@ -1,14 +1,15 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import AuthService from "../services/AuthService";
 
 const HomePage = () => {
 
     const navigate = useNavigate();
     const handleUserRedirection = () => {
-        // if (AuthService.isLoggedIn()) {
+        if (AuthService.isLoggedIn()) {
             return navigate("/cv");
-        // }
-        // return navigate("/login");
+        }
+        return navigate("/login");
     };
 
     return (
