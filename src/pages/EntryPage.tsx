@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const EntryPage = () => {
@@ -11,14 +11,16 @@ const EntryPage = () => {
         e.preventDefault();
         console.log(firstName);
         console.log(lastName);
-        navigate('/cv');
+        navigate('/cv', { state: {firstName: firstName, lastName: lastName}});
     }
+
+    const show = (b: number) => console.log(b);
     return (
         <>
             <div className='login-body'>
                 <div className="login">
                     <form onSubmit={e => { handleSubmit(e) }}>
-                        <label>Your CV is one step away.</label>
+                        <label>Your CV is one step away</label>
                         <h2>Your CV is one step away</h2>
                         <input
                             type="text"
@@ -42,4 +44,4 @@ const EntryPage = () => {
     )
 }
 
-export default EntryPage
+export default EntryPage;

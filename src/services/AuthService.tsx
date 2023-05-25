@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // const Base_URL = "http://localhost:3000";
-const Base_URL = "https://4987-119-160-96-219.ngrok-free.app";
+const Base_URL = "https://5fe5-110-39-93-45.ngrok-free.app";
 // const Base_URL = "https://lms-app.pseudosquare.com"
 
 const register = (user_data: Object): any => {

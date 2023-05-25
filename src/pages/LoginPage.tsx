@@ -47,6 +47,7 @@ const LoginPage = () => {
                             onChange={e => setPassword(e.target.value)}
                         />
                         <button type="submit">Sign up</button>
+                        <h3 onClick={e => navigate('/entry')}>o</h3>
                     </form>
                 </div>
 

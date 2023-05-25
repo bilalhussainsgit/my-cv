@@ -35,7 +35,47 @@
     cursor: pointer;
 }
 
-.profile-body h2 span {
+.profile-body .name {
+    display: inline;
+    margin: 0 4px 0 4px;
+}
+
+.profile-body .title {
     font-size: 0.8em;
     font-weight: 300;
+}
+
+.contact-body {
+    padding-top: 40px;
+}
+
+.contact-body .title {
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.contact-body ul {
+    position: relative;
+}
+.contact-body li {
+    position: relative;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.contact-body .icon {
+    display: inline-block;
+    margin-right: 4px;
+    width: 40px;
+    font-size: 18px;
+    color: rgb(250, 4, 205);
+}
+
+.contact-body .text {
+    color: white;
+    font-weight: 300;
+    cursor: pointer;
+    display: inline;
 }
