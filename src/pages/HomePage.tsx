@@ -7,7 +7,7 @@ const HomePage = () => {
     const navigate = useNavigate();
     const handleUserRedirection = () => {
         if (AuthService.isLoggedIn()) {
-            return navigate("/cv");
+            return navigate("/entry");
         }
         return navigate("/login");
     };

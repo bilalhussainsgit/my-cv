@@ -13,16 +13,16 @@ const LoginPage = () => {
         e.preventDefault();
         let user_data = { email: email, password: password };
         AuthService.register(user_data)
-            .then((res: any) => {
-                // console.log("res=>", res)
-                if (res.status) {
-                    StorageService.setSession(res.data); // stores data in local storage
-                    setTimeout(() => {
-                        navigate('/cv');
-                    }, 1500);
-                }
-            })
-            .catch((error: any) => { console.log(error) });
+            // .then((res: any) => {
+            //     // console.log("res=>", res)
+            //     if (res.status) {
+            //         StorageService.setSession(res.data); // stores data in local storage
+            //         setTimeout(() => {
+            //             navigate('/entry');
+            //         }, 500);
+            //     }
+            // })
+            // .catch((error: any) => { console.log(error) });
     }
 
     return (

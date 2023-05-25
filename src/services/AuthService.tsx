@@ -2,14 +2,17 @@ import axios from 'axios';
 
 // const Base_URL = "http://localhost:3000";
 const Base_URL = "https://4987-119-160-96-219.ngrok-free.app";
+// const Base_URL = "https://lms-app.pseudosquare.com"
 
 const register = (user_data: Object): any => {
-  axios
-    .post(`${{ Base_URL }}/auth`, { ...user_data, })
+  // console.log(user_data);
+
+  axios.post(`${Base_URL}/auth`, user_data)
     .then((response) => {
       console.log(response.data);
-      return response.data;
-    });
+      // return response.data;
+    })
+    .catch((error: any) => console.log(error));
 };
 
 const login = (user_data: Object) => {

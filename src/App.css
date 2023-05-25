@@ -19,6 +19,8 @@ body {
 	padding: 15px 45px;
 	text-align: center;
 	text-transform: uppercase;
+	font-size: 1.1em;
+    font-weight: 500;
 	transition: 0.5s;
 	background-size: 200% auto;
 	color: white;
@@ -28,7 +30,7 @@ body {
 }
 
 .home-body .btn-grad:hover {
-	padding: 20px 50px;
+	padding: 25px 50px;
 	background-position: right center;
 	/* change the direction of the change here */
 	color: #fff;
@@ -111,6 +113,10 @@ body {
 .login-body .login label {
 	color: #573b8a;
 	transform: scale(.6);
+}
+.login-body .login h2 {
+	color: #573b8a;
+	text-align: center;
 }
 
 .login-body #chk:checked~.login {
