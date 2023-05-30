@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import ContentEditable from 'react-contenteditable';
-import './Education.css';
+import '../assets/styles/Education.css';
 
 const Education = () => {
 

@@ -1,0 +1,10 @@
+.objective-body {
+    margin-bottom: 50px;
+}
+
+.objective-body .title {
+    color: rgb(97, 30, 82);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}

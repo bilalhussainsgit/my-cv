@@ -1,0 +1,25 @@
+.page {
+    position: relative;
+    /* size of A4 page is 210 x 297 mm */
+    max-width: 840px;
+    min-height: 1188px;
+    background-color: white;
+    margin: 30px;
+    box-shadow: 0 35px 45px rgba(0, 0, 0, 0.4);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.page .left-side {
+    position: relative;
+    background-color: rgb(97, 30, 82);
+    padding: 40px;
+}
+
+.page .right-side {
+    position: relative;
+    background-color: white;
+    padding: 40px;
+}
+
+

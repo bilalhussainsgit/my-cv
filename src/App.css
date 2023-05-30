@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+
 body {
 	background-color: rgb(204, 204, 204);
 	min-height: 100vh;
@@ -14,147 +18,120 @@ body {
 }
 
 .home-body .btn-grad {
-	background-image: linear-gradient(to right, #DA22FF 0%, #9733EE 51%, #DA22FF 100%);
-	margin: 10px;
-	padding: 15px 45px;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 1.1em;
+    background-image: linear-gradient(to right, #DA22FF 0%, #9733EE 51%, #DA22FF 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.1em;
     font-weight: 500;
-	transition: 0.5s;
-	background-size: 200% auto;
-	color: white;
-	border: none;
-	border-radius: 10px;
-	display: block;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    display: block;
 }
 
 .home-body .btn-grad:hover {
-	padding: 25px 50px;
-	background-position: right center;
-	/* change the direction of the change here */
-	color: #fff;
-	cursor: pointer;
+    padding: 25px 50px;
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    cursor: pointer;
 }
 
 .login-body {
-	width: 350px;
-	height: 500px;
-	overflow: hidden;
-	background-color: #6d44b8;
-	border-radius: 10px;
-	box-shadow: 5px 20px 50px #000;
+    width: 350px;
+    height: 500px;
+    overflow: hidden;
+    background-color: #6d44b8;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
 }
 
 .login-body #chk {
-	display: none;
+    display: none;
 }
 
 .login-body .signup {
-	position: relative;
-	width: 100%;
-	height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .login-body label {
-	color: #fff;
-	font-size: 2.3em;
-	justify-content: center;
-	display: flex;
-	margin: 60px;
-	font-weight: bold;
-	cursor: pointer;
-	transition: .5s ease-in-out;
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
 }
 
 .login-body input {
-	width: 60%;
-	height: 30px;
-	background: #e0dede;
-	justify-content: center;
-	display: flex;
-	margin: 20px auto;
-	padding: 10px;
-	border: none;
-	outline: none;
-	border-radius: 5px;
+    width: 60%;
+    height: 30px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
 }
 
 .login-body button {
-	width: 60%;
-	height: 40px;
-	margin: 10px auto;
-	justify-content: center;
-	display: block;
-	color: #fff;
-	background: #2e0751;
-	font-size: 1em;
-	font-weight: bold;
-	margin-top: 20px;
-	outline: none;
-	border: none;
-	border-radius: 5px;
-	transition: .2s ease-in;
-	cursor: pointer;
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #2e0751;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
 }
 
 .login-body button:hover {
-	border: 1px solid white;
+    border: 1px solid white;
 }
 
 .login-body .login {
-	height: 460px;
-	background: #eee;
-	border-radius: 60% / 10%;
-	transform: translateY(-180px);
-	transition: .8s ease-in-out;
+    height: 460px;
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-180px);
+    transition: .8s ease-in-out;
 }
 
 .login-body .login label {
-	color: #573b8a;
-	transform: scale(.6);
+    color: #573b8a;
+    transform: scale(.6);
 }
+
 .login-body .login h2 {
-	color: #573b8a;
-	text-align: center;
+    color: #573b8a;
+    text-align: center;
 }
 
 .login-body #chk:checked~.login {
-	transform: translateY(-500px);
+    transform: translateY(-500px);
 }
 
 .login-body #chk:checked~.login label {
-	transform: scale(1);
+    transform: scale(1);
 }
 
 .login-body #chk:checked~.signup label {
-	transform: scale(.6);
-}
-
-.page {
-    position: relative;
-    /* width: 100%; */
-    max-width: 958px;
-    min-height: 1352px;
-    background-color: white;
-    margin: 30px;
-    box-shadow: 0 35px 45px rgba(0, 0, 0, 0.4);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-}
-
-.page .left-side {
-    position: relative;
-    background-color: rgb(97, 30, 82);
-    padding: 40px;
-}
-
-.page .right-side {
-    position: relative;
-    background-color: white;
-    padding: 40px;
-}
-
-[contenteditable] {
-    outline: 0px solid transparent;
+    transform: scale(.6);
 }

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import ContentEditable from 'react-contenteditable';
-import ProfilePic from "../../assets/images/profile.png";
-import './Profile.css';
-import CvService from '../../services/CvService';
+import ProfilePic from "../assets/images/profile.png";
+import '../assets/styles/Profile.css';
+import CvService from '../services/CvService';
 
 export default function Profile() {
 
