@@ -12,17 +12,26 @@ const LoginPage = () => {
     const handleSignUp = (e: any) => {
         e.preventDefault();
         let user_data = { email: email, password: password };
-        AuthService.register(user_data)
-            // .then((res: any) => {
-            //     // console.log("res=>", res)
-            //     if (res.status) {
-            //         StorageService.setSession(res.data); // stores data in local storage
-            //         setTimeout(() => {
-            //             navigate('/entry');
-            //         }, 500);
-            //     }
-            // })
-            // .catch((error: any) => { console.log(error) });
+        AuthService.register(user_data) // creates account
+            .then((res: any) => {
+                if (res.status === "success") {
+                    StorageService.setSession(res.data); // stores data in local storage
+                    navigate('/entry');
+                }
+            })
+            .catch((error: any) => { console.log(error) });
+    }
+
+    const handleLogin = (e: any) => {
+        e.preventDefault();
+        let user_data = { email: email, password: password };
+        AuthService.login(user_data) // login the user
+            .then((res: any) => {
+                console.log("I am Logged in");
+                StorageService.setSession(res.data); // stores data in local storage
+                navigate('/entry');
+            })
+            .catch((error: any) => console.log(error));
     }
 
     return (
@@ -47,13 +56,11 @@ const LoginPage = () => {
                             onChange={e => setPassword(e.target.value)}
                         />
                         <button type="submit">Sign up</button>
-                        <h3 onClick={e => navigate('/entry')}>o</h3>
                     </form>
                 </div>
 
                 <div className="login">
-                    <form>
-
+                    <form onSubmit={(e) => handleLogin(e)}>
                         <label htmlFor="chk" aria-hidden="true">Login</label>
                         <input
                             type="email"
@@ -69,7 +76,7 @@ const LoginPage = () => {
                             autoComplete="on"
                             onChange={e => setPassword(e.target.value)}
                         />
-                        <button >Login</button>
+                        <button type='submit'>Login</button>
                     </form>
                 </div>
             </div>

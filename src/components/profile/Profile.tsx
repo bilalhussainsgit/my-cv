@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import ContentEditable from 'react-contenteditable';
-import ProfilePic from "../../assets/images/img.png";
+import ProfilePic from "../../assets/images/profile.png";
 import './Profile.css';
+import CvService from '../../services/CvService';
 
 export default function Profile() {
 
@@ -25,7 +26,16 @@ export default function Profile() {
             ...personal_information,
             ...updatedValue
         }));
-        console.log(JSON.stringify(personal_information, null, 2));
+    }
+    
+    const handleSave = () => {
+        // console.log(JSON.stringify(personal_information, null, 2));
+        CvService.postPersonalInfo(personal_information)
+        .then((res: any) => {
+            console.log("Below is the response of postPersonalInfo");
+            console.log(res);
+        })
+        .catch((error) => console.log(`Error => ${error}`));
     }
 
     return (
@@ -90,6 +100,7 @@ export default function Profile() {
                         />
                     </li>
                 </ul>
+                <button onClick={handleSave}>Save</button>
             </div >
         </>
     )

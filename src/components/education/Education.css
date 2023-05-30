@@ -1,7 +1,18 @@
-.education-body {
-    text-decoration: line-through;
+.education-body li {
+    margin-bottom: 15px;
 }
-.education-body p {
-    font-size: 1.1em;
-    font-weight: 600;
+
+.education-body h5 {
+    color: rgb(250, 4, 205);
+    font-weight: 500;
+}
+
+.education-body h4:nth-child(2) {
+    color: white;
+    font-weight: 500;
+}
+
+.education-body h4 {
+    color: white;
+    font-weight: 300;
 }

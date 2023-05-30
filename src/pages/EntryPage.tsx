@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import AuthService from '../services/AuthService';
 
 
 const EntryPage = () => {
@@ -9,14 +10,16 @@ const EntryPage = () => {
     const navigate = useNavigate();
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        console.log(firstName);
-        console.log(lastName);
-        navigate('/cv', { state: {firstName: firstName, lastName: lastName}});
+        navigate('/cv', { state: { firstName: firstName, lastName: lastName } });
+    }
+    const handleLogout = () => {
+        AuthService.logout();
+        navigate('/home');
     }
 
-    const show = (b: number) => console.log(b);
     return (
         <>
+            <button onClick = {handleLogout}>Log out</button>
             <div className='login-body'>
                 <div className="login">
                     <form onSubmit={e => { handleSubmit(e) }}>
