@@ -27,7 +27,6 @@ const LoginPage = () => {
         let user_data = { email: email, password: password };
         AuthService.login(user_data) // login the user
             .then((res: any) => {
-                console.log("I am Logged in");
                 StorageService.setSession(res.data); // stores data in local storage
                 navigate('/entry');
             })

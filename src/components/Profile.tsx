@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import ContentEditable from 'react-contenteditable';
 import ProfilePic from "../assets/images/profile.png";
 import '../assets/styles/Profile.css';
-import CvService from '../services/CvService';
+import InfoService from '../services/InfoService';
 
 export default function Profile() {
 
@@ -27,10 +27,16 @@ export default function Profile() {
             ...updatedValue
         }));
     }
-    
-    const handleSave = () => {
-        // console.log(JSON.stringify(personal_information, null, 2));
-        CvService.postPersonalInfo(personal_information)
+
+    const handleTest = () => {
+
+        // const userJson = localStorage.getItem('user');
+        // const userData = userJson !== null ? JSON.parse(userJson) : {};
+        // console.log(`ID of current user is ${userData.id}`);
+        // console.log(`First name is ${personal_information.first_name}`);
+        // console.log(`Last name is ${personal_information.last_name}`);
+
+        InfoService.postPersonalInfo(personal_information)
         .then((res: any) => {
             console.log("Below is the response of postPersonalInfo");
             console.log(res);
@@ -57,7 +63,7 @@ export default function Profile() {
                     />
                     <span>
                         <ContentEditable
-                        className='title'
+                            className='title'
                             onChange={e => handleChange({ title: e.currentTarget.innerHTML })}
                             html={personal_information.title}
                         />
@@ -100,7 +106,7 @@ export default function Profile() {
                         />
                     </li>
                 </ul>
-                <button onClick={handleSave}>Save</button>
+                <button onClick={handleTest}>test</button>
             </div >
         </>
     )

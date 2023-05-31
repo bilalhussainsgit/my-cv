@@ -7,6 +7,12 @@
     font-weight: 500;
 }
 
+.education-body .date {
+    color: rgb(250, 4, 205);
+    font-weight: 500;
+    display: inline;
+}
+
 .education-body h4:nth-child(2) {
     color: white;
     font-weight: 500;
